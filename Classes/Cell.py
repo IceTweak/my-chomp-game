@@ -1,8 +1,8 @@
 """
-Cell
-Inherited from Frame
-Each cell colored according to its status- live (poison or non poison) or dead (chosen or non chosen)
-cell size decided according to rows and columns number.
+Каждая ячейка окрашена в соответствии со своим статусом:
+    - Живая (ядовитая или не ядовитая) Live и Poison;
+    - Мертвая (выбранная или не выбранная) Dead и Chosen.
+Размер ячейки определяется в соответствии с количеством строк и столбцов.
 """
 import tkinter as tk
 from Classes.HumanPlayer import HumanPlayer
@@ -24,7 +24,7 @@ class Cell(tk.Frame):
         return self["background"] == static.POISON
 
     def bind_players_event(self, players_cycle_list):
-        # players_cycle_list starts with the second_player
+        # players_cycle_list начинается со второго игрока, чтобы при вызове next 1-ый ход был у 1-го игрока
         second_player, first_player = next(players_cycle_list), next(players_cycle_list)
         self.bind(static.LEFT_MOUSE_BUTTON, first_player.choose_live_cell_from_board)
         if isinstance(second_player, HumanPlayer):

@@ -1,7 +1,7 @@
 """
-Human Player
-Inherited from PlayerABC
-This class responsible for the cell-choosing logic, the current player turn label displayed etc'.
+Этот класс отвечает за поведение игрока-челвека, логику выбора ячейки,
+отображаемую метку текущего хода игрока и т.д.
+Наследуется от PlayerABC
 """
 
 from Classes.PlayerABC import PlayerABC
@@ -15,9 +15,10 @@ class HumanPlayer(PlayerABC):
         super().__init__(game_object, display_name)
 
     def choose_live_cell_from_board(self, event):
-        """ Connect the click event to the Cell object.
-        If cell is alive,  remove the chosen cell on the board.
-        Else, do nothing.
+        """
+        Соединение события щелчка с объектом Cell.
+        Если ячейка жива, удаляем выбранную ячейку с доски.
+        В противном случае ничего не делаем.
         """
         player_selected_cell = self.game_object.root.winfo_containing(event.x_root, event.y_root)
         if player_selected_cell.is_live:

@@ -1,8 +1,8 @@
 """
-PlayerABC
-Inherited from ABC
-Abstract class. using as a template for the players.
-For new player logic, create inherited class and implement choose_live_cell_from_board.
+abc — Abstract Base Classes, для создания и работы с абстрактынми классами
+PlayerABC - абстрактный класс. Используется в качестве шаблона для игроков.
+Для описания логики нового игрока необходимо создать новый унаследованный класс
+и реализовать (Override) абстрактный метод choose_live_cell_from_board.
 """
 
 from abc import ABC, abstractmethod
@@ -19,7 +19,7 @@ class PlayerABC(ABC):
         pass
 
     def remove_block_from_board(self):
-        """After choosing valid cell, coloring it with "chosen" color and remove the rest of the block"""
+        # После выбора допустимой ячейки раскрасит ее «СHOSEN» цветом и удалит остальную часть блока.
         self.chosen_cell.kill_cell(was_chosed=True)
         self.game_object.remove_remainder_cells(self.chosen_cell)
         self.game_object.finish_turn()
