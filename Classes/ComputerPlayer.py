@@ -24,10 +24,9 @@ class ComputerPlayer(PlayerABC):
             live_cells_indices = [(x, y) for x in range(self.game_object.rows) for y in range(self.game_object.columns)
                                   if self.game_object.cells[x][y].is_live]
             x, y = choice(live_cells_indices)
+            # избранная клетка не будет отравленной, если есть какая-то другая живая ячейка.
             if len(live_cells_indices) > 1:
                 while self.game_object.cells[x][y].is_poison():
                     x, y = choice(live_cells_indices)
-
-            # избранная клетка не будет отравленной, если есть какая-то другая живая ячейка.
             self.chosen_cell = self.game_object.cells[x][y]
             self.remove_block_from_board()
