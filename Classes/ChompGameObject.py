@@ -14,6 +14,7 @@ from Classes.HumanPlayer import HumanPlayer
 
 
 class GameObject(tk.Frame):
+
     def __init__(self, root, rows, columns, play_against):
         self.root = root
         root.iconbitmap("icons/chocolate_bar.ico")
@@ -83,7 +84,7 @@ class GameObject(tk.Frame):
                 self.cells[row][column] = cell
 
                 # Привязка нажатий к игрокам
-                # Если игра идет против компьютера, то выбор ячейки игрока, сполняет триггер для хода компьютера
+                # Если игра идет против компьютера, то выбор ячейки игроком, исполняет триггер для хода компьютера
                 cell.bind_players_event(self.players)
 
     def remove_remainder_cells(self, chosen_cell):

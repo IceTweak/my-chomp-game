@@ -24,5 +24,3 @@ class HumanPlayer(PlayerABC):
         if player_selected_cell.is_live:
             self.chosen_cell = player_selected_cell
             self.remove_block_from_board()
-
-
