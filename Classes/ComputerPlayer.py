@@ -2,11 +2,10 @@
 Этот класс отвечает за поведение компьютерного игрока, логику выбора ячейки,
 отображаемую метку текущего хода игрока и т.д.
 """
-import random
 
-from Classes.PlayerABC import PlayerABC
 from random import choice
 from Classes.AiSolver import wins
+from Classes.PlayerABC import PlayerABC
 
 
 class ComputerPlayer(PlayerABC):
