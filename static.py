@@ -4,7 +4,7 @@ PLAY_AGAINST_FRIEND = "Играть с другом"
 PLAY_AGAINST_PC = "Играть против компьютера"
 
 # Макс. и мин. размеры поля
-MIN_ROW_NUM = 2
+MIN_ROW_NUM = 3
 MAX_ROW_NUM = 15
 MIN_COL_NUM = 3
 MAX_COL_NUM = 15
