@@ -5,9 +5,9 @@ PLAY_AGAINST_PC = "Играть против компьютера"
 
 # Макс. и мин. размеры поля
 MIN_ROW_NUM = 2
-MAX_ROW_NUM = 20
+MAX_ROW_NUM = 15
 MIN_COL_NUM = 3
-MAX_COL_NUM = 20
+MAX_COL_NUM = 15
 
 # Заголовки и параграфы для внутренних сообщений и названий
 MENU_TITLE = "Меню - Игра Щёлк!"
