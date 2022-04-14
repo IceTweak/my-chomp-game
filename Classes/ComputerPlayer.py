@@ -28,9 +28,9 @@ class ComputerPlayer(PlayerABC):
                                             self.game_object.cells[x][y].is_live])
 
             # избранная клетка не будет отравленной, если есть какая-то другая живая ячейка.
-            x, y = self.game_object.rows - 1, 0
+            x, y = choice(list(live_cells_indices))
             if 1 < len(live_cells_indices) < 50:
-                # если список возможный ходов не пуст
+                # если список ходов не пуст
                 try:
                     computer_move = wins(live_cells_indices)[0]
                     cells_to_kill = live_cells_indices - computer_move
@@ -40,7 +40,7 @@ class ComputerPlayer(PlayerABC):
                     x, y = choice(list(live_cells_indices))
 
             # если доска большая то сначала выбираем случайно а потом по алгоритму
-            elif len(live_cells_indices) > 50:
+            else:
                 x, y = choice(list(live_cells_indices))
 
             self.chosen_cell = self.game_object.cells[x][y]
